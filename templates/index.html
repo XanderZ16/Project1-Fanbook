@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Wishlist" />
+    <meta property="og:description" content="A website that created for make your wishlist" />
+    <meta property="og:image" content="{{ url_for('static', filename='ogimage.jpg') }}" />
     <title>Project One</title>
 
     <!-- Bootstrap CSS -->
@@ -55,6 +58,7 @@
                         }
                         let title = articles[i]['title'];
                         let content = articles[i]['content'];
+                        let date = articles[i]['time'];
                         let temp_card = `
                             <div class="col-4 mb-3">
                                 <div class="card">
@@ -63,7 +67,7 @@
                                         <img src="${profile}" alt="Profile" id="profile">
                                         <h5 class="card-title">${title}</h5>
                                         <p class="card-text">${content}</p>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">${date}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +109,6 @@
             });
         }
     </script>
-</head>
 </head>
 
 <body>

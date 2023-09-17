@@ -45,6 +45,8 @@ def save_diary():
         profilename = None;
         print('File not uploaded')
 
+    date_time = now.strftime("%Y.%m.%d")
+
     title_receive = request.form.get('title_give')
     content_receive = request.form.get('content_give')
 
@@ -53,6 +55,7 @@ def save_diary():
         'profile': profilename,
         'title': title_receive,
         'content': content_receive,
+        'time': date_time
     }
     db.diary.insert_one(doc)
     return jsonify({'message': 'Diary Posted'})
